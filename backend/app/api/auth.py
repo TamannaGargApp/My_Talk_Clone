@@ -101,7 +101,7 @@ async def google_callback(code: str = "", state: str = ""):
     one_time_code = secrets.token_urlsafe(32)
     db.oauth_codes.insert_one({"_id": f"exchange:{one_time_code}", "user_id": str(user_id),
         "expires_at": datetime.now(timezone.utc) + timedelta(minutes=2)})
-    return RedirectResponse(cfg.frontend_url.rstrip("/") + "/index.html#oauth=" + one_time_code)
+    return RedirectResponse(cfg.frontend_url.rstrip("/") + "/#oauth=" + one_time_code)
 
 
 @router.post("/google/exchange")

@@ -1,4 +1,4 @@
-# 100x AI Voice Agent — Meet My AI Twin
+# AI Voice Agent — Meet My AI Twin
 
 An interview demo with **FastAPI + Gemini + MongoDB Atlas + uv**, and a plain HTML/CSS/JS frontend. Browser speech recognition captures questions; browser speech synthesis reads responses aloud. Guests can chat without registration. Registered users get saved history on the server.
 
