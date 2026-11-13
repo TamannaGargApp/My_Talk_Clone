@@ -70,7 +70,7 @@ async def google_callback(code: str = "", state: str = ""):
     db = get_db()
     if not code or not state or not db.oauth_codes.find_one_and_delete({"_id": f"state:{state}"}):
         raise HTTPException(status_code=400, detail="Invalid OAuth state")
-    async with OAuth2Client(client_id=cfg.google_client_id,
+    async with AsyncOAuth2Client(client_id=cfg.google_client_id,
                             client_secret=cfg.google_client_secret) as client:
         token = await client.fetch_token(
             "https://oauth2.googleapis.com/token", code=code,
