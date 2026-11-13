@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827"><title>Meet My AI Twin | Voice Interview</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><div class="brand">✦ AI Twin <span class="muted">/ Interview Agent</span></div>
+      <div id="account"><button id="show-login" class="quiet">Sign in</button><button id="show-register" class="quiet">Create account</button></div></header>
+    <section class="hero"><div class="eyebrow">PERSONAL AI INTERVIEW EXPERIENCE</div>
+      <h1>Ask me anything.<br><em>I'll answer in my own voice.</em></h1>
+      <p>Meet a voice-enabled AI representative of a GenAI engineer. Ask about projects, strengths, career goals, and more. Guest access is available — no account required.</p></section>
+    <section class="chat-card" aria-label="Interview conversation">
+      <div class="chat-heading"><div><span class="online"></span><strong>AI Interview Agent</strong><small>Ready to talk</small></div><button id="new-chat" class="quiet">New chat</button></div>
+      <div id="messages" class="messages" aria-live="polite"><div class="bubble assistant">Hello! I'm the AI interview representative. Ask me about my GenAI projects, engineering experience, or what I enjoy building.</div></div>
+      <div class="composer"><button id="mic" class="mic" title="Use microphone" aria-label="Start voice input">🎙️</button>
+        <input id="message" placeholder="Ask about my projects, strengths, or experience..." maxlength="2000" aria-label="Your question">
+        <button id="send" class="primary">Send</button></div>
+      <div class="chat-footer"><label><input id="speak" type="checkbox" checked> Read answers aloud</label><span id="status" role="status">Guest demo mode</span></div>
+    </section>
+    <section id="auth-panel" class="auth-panel hidden" aria-label="Account access">
+      <button id="close-auth" class="close" aria-label="Close">×</button><h2 id="auth-title">Sign in</h2>
+      <form id="auth-form"><label id="name-row" class="hidden">Name<input id="name" autocomplete="name"></label>
+        <label>Email<input id="email" type="email" autocomplete="email" required></label>
+        <label>Password<input id="password" type="password" autocomplete="current-password" minlength="8" required></label>
+        <button id="auth-submit" class="primary" type="submit">Sign in</button></form>
+      <button id="google" class="google">Continue with Google</button>
+      <p class="muted">Signing in enables saved conversation history. Guest mode remains available.</p>
+    </section>
+    <footer>Built with FastAPI · Gemini · MongoDB · Browser Speech API</footer>
+  </main>
+  <script src="config.js"></script><script src="js/app.js"></script>
+</body></html>
