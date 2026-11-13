@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta, timezone
 import secrets
 from urllib.parse import urlencode
-from authlib.integrations.httpx_client import OAuth2Client
+from authlib.integrations.httpx_client import AsyncOAuth2Client
 from bson import ObjectId
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import RedirectResponse
