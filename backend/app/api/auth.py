@@ -77,8 +77,8 @@ async def google_callback(code: str = "", state: str = ""):
             redirect_uri=cfg.google_redirect_uri,
             grant_type="authorization_code",
         )
-        response = await client.get("https://openidconnect.googleapis.com/v1/userinfo",
-                                    token=token)
+        response = await client.get("https://openidconnect.googleapis.com/v1/userinfo")
+        
         response.raise_for_status()
         info = response.json()
     if not info.get("email_verified") or not info.get("sub"):
